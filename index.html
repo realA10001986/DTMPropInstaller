@@ -18,7 +18,7 @@
 
 <p>This page is intended to ease firmware installation on fresh NodeMCU ESP32 boards for use in CircuitSetup/A10001986-designed DTM props such as <a href="https://tcd.out-a-ti.me">Time Circuits Display</a>, <a href="https://fc.out-a-ti.me">Flux Capacitor</a>, <a href="https://sid.out-a-ti.me">SID</a>, <a href="https://dg.out-a-ti.me">Dash Gauges</a> or <a href="https://vsr.out-a-ti.me">VSR</a>.</p>
 
-<p>Using this page, you can install a generic Installer on your ESP32.</p> 
+<p>Using this page, you can install a generic OTA Installer on your ESP32. This generic Installer allows OTA installation of the respective prop's firmware on your ESP32.</p> 
 
 <p>Note that you might need to install some driver before proceeding:</p> 
 <ul>
@@ -32,7 +32,7 @@
   manifest="manifest.json"
 ></esp-web-install-button>
 
-<p>Once installed, connect your computer or hand-held to a WiFi network named "NP-AP". Then navigate your browser to <a href="http://install.local">http://install.local</a> or <a href="http://192.168.4.1">http://192.168.4.1</a> and click on "Update". On the page presented then, select a firmware binary for either TCD, FC, SID, Dash Gauges or VSR to install, and click "UPDATE" to proceed. The firmware will be installed on your ESP32 and it is ready for use in your prop. Future firmware updates can be done through the prop's firmware, a re-installation of the generic Installer - as presented on this page - is not required.</p>
+<p>After installation, disconnect the ESP32 from your computer, install it in/on your prop, and power-up the prop. Next, connect your computer or hand-held to a WiFi network named "NP-AP". Then navigate your browser to <a href="http://install.local">http://install.local</a> or <a href="http://192.168.4.1">http://192.168.4.1</a> and click on "Update". On the page presented then, select a firmware binary for either TCD, FC, SID, Dash Gauges or VSR to install, and click "UPDATE" to proceed. The firmware will be installed on your ESP32. Future firmware updates can be done OTA through the prop's firmware, a re-installation of the generic Installer - as presented on this page - is not required.</p>
 
 </div>
 
