@@ -16,23 +16,31 @@
 	
 <H1>Welcome to the CS/A10001986 DTM Prop Installer</h1>
 
-<p>This page is intended to ease firmware installation on fresh NodeMCU ESP32 boards for use in CircuitSetup/A10001986-designed DTM props such as <a href="https://tcd.out-a-ti.me">Time Circuits Display</a>, <a href="https://fc.out-a-ti.me">Flux Capacitor</a>, <a href="https://sid.out-a-ti.me">SID</a>, <a href="https://dg.out-a-ti.me">Dash Gauges</a> or <a href="https://vsr.out-a-ti.me">VSR</a>.</p>
+<p>This page is intended to ease initial firmware installation on fresh NodeMCU ESP32 boards for use in CircuitSetup/A10001986-designed DTM props such as <a href="https://tcd.out-a-ti.me">Time Circuits Display</a>, <a href="https://fc.out-a-ti.me">Flux Capacitor</a>, <a href="https://sid.out-a-ti.me">SID</a>, <a href="https://dg.out-a-ti.me">Dash Gauges</a> or <a href="https://vsr.out-a-ti.me">VSR</a>. For all the props, a pre-compiled binary is provided in the <i>install</i> folder of their respective repository.</p>
 
-<p>Using this page, you can install a generic OTA Installer on your ESP32. This generic Installer allows OTA installation of the respective prop's firmware on your ESP32.</p> 
-
-<p>Note that you might need to install some driver before proceeding:</p> 
+<p>How this works:</p>
+<ul>
+<li>First, a generic Installer is uploaded to your ESP32 through USB. This might require installing a driver, see below.</li>
+<li>After this generic Installer is uploaded to your ESP32, all future firmware uploads can be done OTA ("over the air", meaning using WiFi). No USB connection is required, all you need is a web browser.</li>
+</ul>
+	
+<p>Note that you might need to install some driver in order to establish the required USB connection:</p> 
 <ul>
 <li>For ESP32 boards with a CP210x, install <a href="https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads">this</a>. On <b>Windows</b>, connect your ESP32, start the Device Manager, expand the "Ports (COM & LPT)" list and look for the port with the ESP32 name. On <b>Mac</b>, the port is named "/dev/cu.SLAB_USBtoUART".</li>
 <li>For ESP32 boards with a CH340, Windows users need to install a driver as well. Mac users don't. On Windows, see above on how to find out about the port; on Mac, the port is named /dev/cu.usbserial-XXXX (XXXX being some random number).</li> 
 </ul>
 
-<p>In order to proceed, connect your NodeMCU ESP32 to your computer through USB, wait a few seconds, and click "Connect".</p>
+<p>Let's get started:</p>
+
+<p>In order to proceed, connect your NodeMCU ESP32 to your computer through USB and wait a few seconds. At this point, Windows users need to find out about the correct port, see above. Then click "Connect".</p>
 		
 <esp-web-install-button
   manifest="manifest.json"
 ></esp-web-install-button>
 
-<p>After installation, disconnect the ESP32 from your computer, install it in/on your prop, and power-up the prop. Next, connect your computer or hand-held to a WiFi network named "NP-AP". Then navigate your browser to <a href="http://install.local">http://install.local</a> or <a href="http://192.168.4.1">http://192.168.4.1</a> and click on "Update". On the page presented then, select a firmware binary for either TCD, FC, SID, Dash Gauges or VSR to install, and click "UPDATE" to proceed. The firmware will be installed on your ESP32. Future firmware updates can be done OTA through the prop's firmware, a re-installation of the generic Installer - as presented on this page - is not required.</p>
+<p>After the upload has finished, disconnect the ESP32 from your computer, put it in/on your prop (if you haven't done that already), and power-up the prop. Next, connect your computer or hand-held to a WiFi network named "NP-AP". Navigate your browser to <a href="http://install.local">http://install.local</a> or <a href="http://192.168.4.1">http://192.168.4.1</a> and click on "Update". On the page presented then, select a pre-compiled firmware binary for either <a href="https://tcd.out-a-ti.me">TCD</a>, <a href="https://fc.out-a-ti.me">FC</a>, <a href="https://sid.out-a-ti.me">SID</a>, <a href="https://dg.out-a-ti.me">Dash Gauges</a> or <a href="https://vsr.out-a-ti.me">VSR</a> to install, and click "UPDATE" to proceed. The firmware will be installed on your ESP32.</p> 
+
+<p>Future firmware uploads/updates can be done OTA through the prop's WiFi-accessible Config Portal.</p>
 
 </div>
 
