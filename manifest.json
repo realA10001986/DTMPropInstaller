@@ -1,0 +1,13 @@
+{
+  "name": "DTMPropInstaller",
+  "version": "1.0",
+  "new_install_prompt_erase": false,
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        { "path": "dtmpropinstaller.bin", "offset": 0 },
+      ]
+    }
+  ]
+}
