@@ -39,8 +39,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,system-ui,'Segoe UI',Roboto,'H
 
 <p>Driver for USB connection</p> 
 <ul>
-<li>For ESP32 boards with a CP210x USB-to-UART chip, install <a href="https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads">this</a>. On <b>Windows</b>, connect your ESP32, start the Device Manager, expand the "Ports (COM & LPT)" list and look for the port with the ESP32 name. On <b>Mac</b>, the port is named "cu.SLAB_USBtoUART".</li>
-<li>For ESP32 boards with a CH340 USB-to-UART chip, <b>Windows</b> users may need to install a driver as well; see above on how to find out about the port. On <b>Mac</b>, the port is named cu.usbserial-XXXX (XXXX being some random number), no additional driver is required.</li>
+<li>For ESP32 boards with a <b>CP210x USB-to-UART</b> chip, install <a href="https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads" target=_blank>this</a>.<ul><li>On <b>Windows</b>, connect your ESP32, start the Device Manager, expand the "Ports (COM & LPT)" list and look for the port with the ESP32 name.</li><li>On <b>Mac</b>, the port is named "cu.SLAB_USBtoUART".</li></ul></li>
+<li>For ESP32 boards with a <b>CH340 USB-to-UART</b> chip,<ul><li><b>Windows</b> users may need to install a driver as well; see above on how to find out about the port.</li><li>On <b>Mac</b>, the port is named cu.usbserial-XXXX (XXXX being some random number), no additional driver is required.</li></ul></li>
 </ul>	
 
 <p>Let's get started:</p>
@@ -63,7 +63,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,system-ui,'Segoe UI',Roboto,'H
 </esp-web-install-button>
 
 </li>
-<li>After the upload has finished, disconnect the ESP32 from your computer, put it in/on your prop (if you haven't done that already), and power-up the prop. Next, connect your computer or hand-held to the WiFi network named "NP-AP". Navigate your browser to <a href="http://install.local">http://install.local</a> or <a href="http://192.168.4.1">http://192.168.4.1</a> and click on "Update". On the page presented then, select the pre-compiled firmware binary to install, and click "UPDATE" to proceed. The firmware will be installed on your ESP32.</li>
+<li>After the upload has finished, disconnect the ESP32 from your computer, put it in/on your prop (if you haven't done that already), and power-up the prop. Next, connect your computer or hand-held to the WiFi network named "NP-AP". Navigate your browser to <a href="http://install.local">http://install.local</a> or <a href="http://192.168.4.1">http://192.168.4.1</a> and click on "Update". On the page presented then, select the pre-compiled firmware binary to be installed, and click "UPDATE" to proceed. The selected firmware will be installed on your ESP32.</li>
 </ol>
 	
 <p>Future firmware uploads/updates can be done through the prop's WiFi-accessible Config Portal.</p>
