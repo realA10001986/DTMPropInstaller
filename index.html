@@ -26,21 +26,21 @@ body{font-family:-apple-system,BlinkMacSystemFont,system-ui,'Segoe UI',Roboto,'H
 
 <H1>CircuitSetup/A10001986 DTM Prop Installer</h1>
 
-<p>This page is intended to ease initial firmware installation on fresh NodeMCU ESP32 boards for use in CircuitSetup/A10001986-designed DTM props such as <a href="https://tcd.out-a-ti.me">Time Circuits Display</a>, <a href="https://fc.out-a-ti.me">Flux Capacitor</a>, <a href="https://sid.out-a-ti.me">SID</a>, <a href="https://dg.out-a-ti.me">Dash Gauges</a> or <a href="https://vsr.out-a-ti.me">VSR</a>. The installation works without installing any software apart from a USB driver. You don't have to worry about source codes, compilers, libraries and the likes.</p>
+<p>This page is intended to ease initial firmware installation on fresh ESP32 boards for use in CircuitSetup/A10001986-designed DTM props such as <a href="https://tcd.out-a-ti.me">Time Circuits Display</a>, <a href="https://fc.out-a-ti.me">Flux Capacitor</a>, <a href="https://sid.out-a-ti.me">SID</a>, <a href="https://dg.out-a-ti.me">Dash Gauges</a> or <a href="https://vsr.out-a-ti.me">VSR</a>. The installation works without installing any software apart from a USB driver. You don't have to worry about source codes, compilers, libraries and the likes.</p>
 
 <p>Requirements:</p>
 <ul>
-<li>NodeMCU ESP32 board</li>
+<li>NodeMCU ESP32 board (or TCD Control Board >= 1.4)</li>
 <li>USB cable</li>
 <li>Computer with Windows or MacOS</li>
 <li>Google Chrome or Microsoft Edge browser</li>
-<li>Driver for the USB-to-UART bridge on your NodeMCU ESP32 board, see below</li>
+<li>Driver for the USB-to-UART bridge on your ESP32 board, see below</li>
 </ul>
 
 <p>Driver for USB connection</p> 
 <ul>
-<li>For ESP32 boards with a <b>CP210x USB-to-UART</b> chip, install <a href="https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads" target=_blank>this</a>.<ul><li>On <b>Windows</b>, connect your ESP32, start the Device Manager, expand the "Ports (COM & LPT)" list and look for the port with the ESP32 name.</li><li>On <b>Mac</b>, the port is named "cu.SLAB_USBtoUART".</li></ul></li>
-<li>For ESP32 boards with a <b>CH340 USB-to-UART</b> chip,<ul><li><b>Windows</b> users may need to install a driver as well; see above on how to find out about the port.</li><li>On <b>Mac</b>, the port is named cu.usbserial-XXXX (XXXX being some random number), no additional driver is required.</li></ul></li>
+<li>For ESP32 boards with a <b>CP210x USB-to-UART</b> chip:<ul><li><b>Windows</b> will install a driver when connecting; after installation, start the Device Manager, expand the "Ports (COM & LPT)" list and look for the port with the ESP32 name.</li><li><b>MacOS</b> supports this chip since around 10.15.7 (Catalina). The port is named "cu.usbserial-XXXX".</li><li>Earier versions of Windows or MacOS might not support the CP210x; in that case install <a href="https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads" target=_blank>this</a>. On MacOS, the port is named "cu.SLAB_USBtoUART" then.</ul></li>
+<li>For ESP32 boards with a <b>CH340 USB-to-UART</b> chip,<ul><li><b>Windows</b> users may need to install a driver as well; see above on how to find out about the port.</li><li>On <b>Mac</b>, the port is named cu.usbserial-XXXX, no additional driver is required.</li></ul></li>
 </ul>	
 
 <p>Let's get started:</p>
@@ -54,7 +54,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,system-ui,'Segoe UI',Roboto,'H
 	<li><a href="https://github.com/realA10001986/VSR/raw/main/install/vsr-A10001986.ino.nodemcu-32s.bin">VSR</a></li>
 	</ul>
 </li>
-<li>Now connect your NodeMCU ESP32 to your computer through USB and wait a few seconds. At this point, Windows users need to find out about the correct port, see above. Then click "Connect", select a port, and click <i>Install DTMPropInstaller</i>.<br>
+<li>Now connect your ESP32 board to your computer through USB and wait a few seconds. At this point, Windows users need to find out about the correct port, see above. Then click "Connect", select a port, and click <i>Install DTMPropInstaller</i>.<br>
 <div style="margin-left:auto;margin-right:auto;padding:10px;">		
 <esp-web-install-button manifest="https://reala10001986.github.io/DTMPropInstaller/manifest.json">
   <button slot="activate" class="button">Connect</button>
