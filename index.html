@@ -39,8 +39,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,system-ui,'Segoe UI',Roboto,'H
 
 <p>Driver for USB connection</p> 
 <ul>
-<li>For ESP32 boards with a <b>CP210x USB-to-UART</b> chip (CircuitSetup boards all have those):<ul><li><b>Windows</b> will install a driver when connecting; if it doesn't or fails doing so, please install <a href="https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads" target=_blank>this</a> driver. After installation, start the Device Manager, expand the "Ports (COM & LPT)" list and look for the port with the ESP32 name.</li><li><b>MacOS</b> supports this chip since around 10.15.7 (Catalina). The port is named "cu.usbserial-XXXX". If no port is created and/or the chip is not recognized, install <a href="https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads" target=_blank>this</a> driver. The port is named "cu.SLAB_USBtoUART" after installing this driver. <i>Do not use this driver to upload a firmware on TCD Control Boards >= 1.4, it will fail. Use the Apple built-in driver instead.</i></ul></li>
-<li>For ESP32 boards with a <b>CH340 USB-to-UART</b> chip,<ul><li><b>Windows</b> users may need to install a <a href="http://www.wch-ic.com/downloads/CH341SER_ZIP.html" target=_blank>driver</a> as well; see above on how to find out about the port.</li><li>On <b>Mac</b>, the port is named cu.usbserial-XXXX, no additional driver is required for MacOS Mojave and later.</li></ul></li>
+<li>For ESP32 boards with a <b>CP210x USB-to-UART</b> chip (CircuitSetup boards all have those):<ul><li><b>Windows</b> is said to come with a suitable driver. After connecting the ESP32, start the Device Manager, expand the "Ports (COM & LPT)" list and look for a port with the ESP32 or CP210x name. If there is none, or Windows shows messages about unsupported hardware or a missing driver, please install <a href="https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads" target=_blank>this</a>. </li><li><b>MacOS</b> supports this chip since around 10.15.7 (Catalina). The port is named "cu.usbserial-XXXX". If no such port is created upon connection, install <a href="https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads" target=_blank>this</a> driver. The port is named "cu.SLAB_USBtoUART" after installing this driver. <i>Do not use this driver to upload a firmware on TCD Control Boards >= 1.4, it will fail. Use the Apple built-in driver instead.</i></ul></li>
+<li>For ESP32 boards with a <b>CH340 USB-to-UART</b> chip,<ul><li><b>Windows</b> users may need to install a <a href="http://www.wch-ic.com/downloads/CH341SER_ZIP.html" target=_blank>driver</a>; see above on how to find out about the port.</li><li>On <b>Mac</b>, the port is named cu.usbserial-XXXX, no additional driver is required for MacOS Mojave and later.</li></ul></li>
 </ul>	
 
 <p>Let's get started:</p>
@@ -54,7 +54,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,system-ui,'Segoe UI',Roboto,'H
 	<li><a href="https://github.com/realA10001986/VSR/raw/main/install/vsr-A10001986.ino.nodemcu-32s.bin">VSR</a></li>
 	</ul>
 </li>
-<li>Now connect your ESP32 board to your computer through USB and wait a few seconds. At this point, Windows users need to find out about the correct port, see above. Then click "Connect", select a port, and click <i>Install DTMPropInstaller</i>.<br>
+<li>Now connect your ESP32 board to your computer through USB and wait a few seconds. At this point, Windows users need to find out about the port to choose, see above. Then click "Connect", select a port, and click <i>Install DTMPropInstaller</i>.<br>
 <div style="margin-left:auto;margin-right:auto;padding:10px;">		
 <esp-web-install-button manifest="https://reala10001986.github.io/DTMPropInstaller/manifest.json">
   <button slot="activate" class="button">Connect</button>
