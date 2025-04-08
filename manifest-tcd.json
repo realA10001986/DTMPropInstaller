@@ -1,12 +1,12 @@
 {
   "name": "Time Circuits",
-  "version": "1.0",
+  "version": "3.2.004",
   "new_install_prompt_erase": false,
   "builds": [
     {
       "chipFamily": "ESP32",
       "parts": [
-        { "path": "https://reala10001986.github.io/Time-Circuits-Display/install/timecircuits-A10001986.ino.nodemcu-32s.bin", "offset": 0 }
+        { "path": "tcd.bin", "offset": 0 }
       ]
     }
   ]
