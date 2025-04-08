@@ -6,7 +6,7 @@
     {
       "chipFamily": "ESP32",
       "parts": [
-        { "path": "/bin/dtmpropinstaller.bin", "offset": 0 }
+        { "path": "https://reala10001986.github.io/DTMPropInstaller/bin/dtmpropinstaller.bin", "offset": 0 }
       ]
     }
   ]
