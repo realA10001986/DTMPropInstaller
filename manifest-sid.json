@@ -1,12 +1,12 @@
 {
   "name": "SID",
-  "version": "1.0",
+  "version": "1.52",
   "new_install_prompt_erase": false,
   "builds": [
     {
       "chipFamily": "ESP32",
       "parts": [
-        { "path": "https://github.com/realA10001986/SID/raw/main/install/sid-A10001986.ino.nodemcu-32s.bin", "offset": 0 }
+        { "path": "sid.bin", "offset": 0 }
       ]
     }
   ]
