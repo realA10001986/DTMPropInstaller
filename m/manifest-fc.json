@@ -1,0 +1,13 @@
+{
+  "name": "Flux Capacitor",
+  "version": "1.71.1",
+  "new_install_prompt_erase": false,
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        { "path": "bin/fc.bin", "offset": 0 }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Dash Gauges",
+  "version": "1.13.1",
+  "new_install_prompt_erase": false,
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        { "path": "bin/dg.bin", "offset": 0 }
+      ]
+    }
+  ]
+}

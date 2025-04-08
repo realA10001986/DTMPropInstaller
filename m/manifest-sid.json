@@ -1,0 +1,13 @@
+{
+  "name": "SID",
+  "version": "1.52",
+  "new_install_prompt_erase": false,
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        { "path": "bin/sid.bin", "offset": 0 }
+      ]
+    }
+  ]
+}

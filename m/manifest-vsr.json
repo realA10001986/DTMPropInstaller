@@ -1,0 +1,13 @@
+{
+  "name": "VSR",
+  "version": "1.14.1",
+  "new_install_prompt_erase": false,
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        { "path": "bin/vsr.bin", "offset": 0 }
+      ]
+    }
+  ]
+}
