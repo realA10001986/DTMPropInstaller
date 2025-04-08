@@ -1,0 +1,13 @@
+{
+  "name": "Time Circuits",
+  "version": "1.0",
+  "new_install_prompt_erase": false,
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        { "path": "https://github.com/realA10001986/Time-Circuits-Display/raw/main/install/timecircuits-A10001986.ino.nodemcu-32s.bin", "offset": 0 }
+      ]
+    }
+  ]
+}

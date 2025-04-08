@@ -1,0 +1,13 @@
+{
+  "name": "VSR",
+  "version": "1.0",
+  "new_install_prompt_erase": false,
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        { "path": "https://github.com/realA10001986/VSR/raw/main/install/vsr-A10001986.ino.nodemcu-32s.bin", "offset": 0 }
+      ]
+    }
+  ]
+}

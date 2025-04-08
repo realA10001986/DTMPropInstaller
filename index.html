@@ -45,17 +45,18 @@ body{font-family:-apple-system,BlinkMacSystemFont,system-ui,'Segoe UI',Roboto,'H
 
 <p>Let's get started:</p>
 <ol>
-<li>Please download the pre-compiled binary file for the prop firmware you want to install; for all the DTM props, a binary file is provided in the <i>install</i> folder of their respective repository. For direct download, click on one of the links below:
-	<ul>
-	<li><a href="https://github.com/realA10001986/Time-Circuits-Display/raw/main/install/timecircuits-A10001986.ino.nodemcu-32s.bin">Time Circuits Display (A10001986 release)</a>; for CircuitSetup releases, see <a href="https://github.com/CircuitSetup/Time-Circuits-Display/releases" target=_blank>here</a>.</li>
-	<li><a href="https://github.com/realA10001986/Flux-Capacitor/raw/main/install/fluxcapacitor-A10001986.ino.nodemcu-32s.bin">Flux Capacitor</a></li>
-	<li><a href="https://github.com/realA10001986/SID/raw/main/install/sid-A10001986.ino.nodemcu-32s.bin">SID</a></li>
-	<li><a href="https://github.com/realA10001986/Dash-Gauges/raw/main/install/dashgauges-A10001986.ino.nodemcu-32s.bin">Dash Gauges</a></li>
-	<li><a href="https://github.com/realA10001986/VSR/raw/main/install/vsr-A10001986.ino.nodemcu-32s.bin">VSR</a></li>
-	<li><a href="https://github.com/realA10001986/remote/raw/main/install/remote-A10001986.ino.nodemcu-32s.bin">Futaba Remote Control</a></li>
+<li>Please select which prop you want to install:
+	<ul style="list-style: none;">
+	<li><label><input type="radio" name="type" value="-tcd"> Time Circuits Display</label></li>
+	<li><label><input type="radio" name="type" value="-fc"> Flux Capacitor</label></li>
+	<li><label><input type="radio" name="type" value="-sid"> SID</label></li>
+	<li><label><input type="radio" name="type" value="-dg"> Dash Gauges</label></li>
+	<li><label><input type="radio" name="type" value="-vsr"> VSR</label></li>
+	<li><label><input type="radio" name="type" value="-remote"> Futaba Remote Control</label></li>
+	<li><label><input type="radio" name="type" value="" checked="checked"> Generic - use this for <a href="https://github.com/CircuitSetup/Time-Circuits-Display/releases" target=_blank>CircuitSetup releases</a></label></li>
 	</ul>
 </li>
-<li>Now connect your ESP32 board to your computer through USB and wait a few seconds. At this point, Windows users need to find out about the port to choose, see above. Then click "Connect", select a port, and click <i>Install DTMPropInstaller</i>.<br>
+<li>Now connect your ESP32 board to your computer through USB and wait a few seconds. At this point, Windows users need to find out about the port to choose, see above. Then click "Connect", select a port, and click <i>Install xxx</i>.<br>
 <div style="margin-left:auto;margin-right:auto;padding:10px;">		
 <esp-web-install-button manifest="https://reala10001986.github.io/DTMPropInstaller/manifest.json">
   <button slot="activate" class="button">Connect</button>
@@ -64,10 +65,20 @@ body{font-family:-apple-system,BlinkMacSystemFont,system-ui,'Segoe UI',Roboto,'H
 </esp-web-install-button>
 
 </li>
-<li>After the upload has finished, disconnect the ESP32 from your computer, put it in/on your prop (if you haven't done that already), and power-up the prop. Next, connect your computer or hand-held to the WiFi network named "NP-AP". Navigate your browser to <a href="http://install.local">http://install.local</a> or <a href="http://192.168.4.1">http://192.168.4.1</a> and click on "Update". On the page presented then, select the firmware binary to be installed (= the file you downloaded in the first step), and click "UPDATE" to proceed. The selected firmware will be installed on your ESP32.</li>
+<li>After the upload has finished, disconnect the ESP32 from your computer and put it in/on your prop (if you haven't done that already). 
+	<br><br>If you chose <i>Generic</i>, please power-up the prop and connect your computer or hand-held to the WiFi network named "NP-AP". Navigate your browser to <a href="http://install.local">http://install.local</a> or <a href="http://192.168.4.1">http://192.168.4.1</a> and click on "Update". On the page presented then, select the firmware binary to be installed (eg. a firmware binary from a CircuitSetup release), and click "UPDATE" to proceed. The selected firmware will be installed on your ESP32.</li>
 </ol>
 	
 <p>Future firmware uploads/updates can be done through the prop's WiFi-accessible Config Portal.</p>
+
+<script>
+      document.querySelectorAll('input[name="type"]').forEach(radio =>
+        radio.addEventListener("change", () => {
+          const button = document.querySelector('esp-web-install-button');
+          button.setAttribute("manifest", `https://reala10001986.github.io/DTMPropInstaller/manifest${radio.value}.json`);
+        }
+      ));
+</script>
 
 </div>
 
