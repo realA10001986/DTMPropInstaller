@@ -6,7 +6,7 @@
     {
       "chipFamily": "ESP32",
       "parts": [
-        { "path": "https://github.com/realA10001986/Time-Circuits-Display/raw/main/install/timecircuits-A10001986.ino.nodemcu-32s.bin", "offset": 0 }
+        { "path": "https://reala10001986.github.io/Time-Circuits-Display/install/timecircuits-A10001986.ino.nodemcu-32s.bin", "offset": 0 }
       ]
     }
   ]
