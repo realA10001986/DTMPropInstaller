@@ -1,5 +1,5 @@
 {
-  "name": "Generic DTM Prop Installer",
+  "name": "Generic Installer",
   "version": "1.0",
   "new_install_prompt_erase": false,
   "builds": [
