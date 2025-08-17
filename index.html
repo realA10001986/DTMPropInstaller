@@ -30,6 +30,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,system-ui,'Segoe UI',Roboto,'H
 
 <p>This page is intended to ease initial firmware installation on fresh ESP32 boards for use in <a href="https://circuitsetup.us" target=_blank>CircuitSetup</a>/A10001986-designed DTM props such as <a href="https://tcd.out-a-ti.me">Time Circuits Display</a>, <a href="https://fc.out-a-ti.me">Flux Capacitor</a>, <a href="https://sid.out-a-ti.me">SID</a>, <a href="https://dg.out-a-ti.me">Dash Gauges</a>, <a href="https://vsr.out-a-ti.me">VSR</a> or <a href="https://remote.out-a-ti.me">Futaba Remote Control</a> kit. The installation works without installing any software apart from a USB driver. You don't have to deal with source code, compilers, libraries and the likes.</p>
 
+<p>Note that the procedure described on this page only has to be done once, on fresh, uninitialized ESP32 boards. Later firmware updates can be done through the firmware's WiFi-accessible Config Portal and over-the-air.</p>
+
 <p>Requirements:</p>
 <ul>
 <li>NodeMCU ESP32 board (or TCD Control Board >= 1.4)</li>
@@ -49,12 +51,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,system-ui,'Segoe UI',Roboto,'H
 <ol>
 <li style="margin-bottom:1em">Please select the firmware you want to install:
 	<ul style="list-style: none;">
-	<li><label><input type="radio" name="type" value="-tcd"> Time Circuits Display (A10001986 edition)</label></li>
-	<li><label><input type="radio" name="type" value="-fc"> Flux Capacitor</label></li>
-	<li><label><input type="radio" name="type" value="-sid"> SID</label></li>
-	<li><label><input type="radio" name="type" value="-dg"> Dash Gauges</label></li>
-	<li><label><input type="radio" name="type" value="-vsr"> VSR</label></li>
-	<li><label><input type="radio" name="type" value="-remote"> Futaba Remote Control</label></li>
+	<li><label><input type="radio" name="type" value="-tcd"> Time Circuits Display (A10001986 edition, V3.2.004 JAN172025)</label></li>
+	<li><label><input type="radio" name="type" value="-fc"> Flux Capacitor (V1.71.1 FEB132025)</label></li>
+	<li><label><input type="radio" name="type" value="-sid"> SID (V1.52 FEB082025)</label></li>
+	<li><label><input type="radio" name="type" value="-dg"> Dash Gauges (V1.13.1 FEB132025)</label></li>
+	<li><label><input type="radio" name="type" value="-vsr"> VSR (V1.14.1 FEB112025)</label></li>
+	<li><label><input type="radio" name="type" value="-remote"> Futaba Remote Control (V1.05.1 FEB132025)</label></li>
 	<li><label><input type="radio" name="type" value="" checked="checked"> Generic - use this for <a href="https://github.com/CircuitSetup/Time-Circuits-Display/releases" target=_blank>CircuitSetup TCD releases</a></label></li>
 	</ul>
 </li>
@@ -62,15 +64,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,system-ui,'Segoe UI',Roboto,'H
 <div style="margin-left:auto;margin-right:auto;padding:10px;">		
 <esp-web-install-button manifest="https://reala10001986.github.io/DTMPropInstaller/manifest.json">
   <button slot="activate" class="button">Connect</button>
-  <span slot="unsupported"><i>Your browser is not supported. Please use Google Chrome or Microsoft Edge.</i></span>
+  <span slot="unsupported"><i>Your browser is not supported. Google Chrome or Microsoft Edge required.</i></span>
   <span slot="not-allowed"><i>HTTPS required, HTTP not supported</i></span>	
 </esp-web-install-button>
 
 </li>
-<li>After the upload has finished, disconnect the ESP32 board from your computer and put it in/on your prop (if you haven't done that already).<br><br>If you chose <i>Generic</i>, please power-up the prop and connect your computer or hand-held to the WiFi network named "NP-AP". Navigate your browser to <a href="http://install.local">http://install.local</a> or <a href="http://192.168.4.1">http://192.168.4.1</a> and click on <i>Update</i>. On the page presented then, select the firmware binary to be installed (eg. a firmware binary from a <a href="https://github.com/CircuitSetup/Time-Circuits-Display/releases" target=_blank>CircuitSetup Time Circuits release</a>), and click <i>UPDATE</i> to proceed. The selected firmware will be installed on your ESP32.</li>
+<li>After the upload has finished, disconnect the ESP32 board from your computer and put it in/on your prop (if you haven't done that already). The next steps are to check for firmware updates on the prop's page (as the version presented here might be outdated), and afterwards to install the sound pack. Please see the prop's documentation, chapter "Installation", for details.<br><br>If you chose <i>Generic</i>, please power-up the prop and connect your computer or hand-held to the WiFi network named "NP-AP". Navigate your browser to <a href="http://install.local">http://install.local</a> or <a href="http://192.168.4.1">http://192.168.4.1</a> and click on <i>Update</i>. On the page presented then, select the firmware binary to be installed (eg. a firmware binary from a <a href="https://github.com/CircuitSetup/Time-Circuits-Display/releases" target=_blank>CircuitSetup Time Circuits release</a>), and click <i>UPDATE</i> to proceed. The selected firmware will be installed on your ESP32. Afterwards, proceed as described in the "Firmware installation" section of <a href="https://github.com/CircuitSetup/Time-Circuits-Display/?tab=readme-ov-file#firmware-installation">CircuitSetup's TCD documentation</a>.</li>
 </ol>
-	
-<p>Future firmware uploads/updates can be done through the prop's WiFi-accessible Config Portal.</p>
 
 <script>
       document.querySelectorAll('input[name="type"]').forEach(radio =>
