@@ -12,17 +12,17 @@ body{font-family:-apple-system,BlinkMacSystemFont,system-ui,'Segoe UI',Roboto,'H
   --esp-tools-button-text-color: #fff;
   --esp-tools-button-border-radius: 3px;
 }
-</style>	
+</style>
 
 </head>
 
 <body>
-	
+
 <div style="padding:20px">
-	
+
 <img src="img/ebrownenter.png" style="display:block;width:30em;margin:0px auto 0px auto;">
-		
-<hr style="width:60%">	
+
+<hr style="width:60%">
 
 <img src="img/logo.png" style="display:block;width:40em;margin:0px auto 0px auto;">
 
@@ -41,31 +41,31 @@ body{font-family:-apple-system,BlinkMacSystemFont,system-ui,'Segoe UI',Roboto,'H
 <li>Driver for the USB bridge on your ESP32 board, see below</li>
 </ul>
 
-<p>Driver for USB connection</p> 
+<p>Driver for USB connection</p>
 <ul>
 <li>For ESP32 boards with a <b>CP210x USB-to-UART</b> chip (CircuitSetup boards all have those):<ul><li><b>Windows</b> is said to come with a suitable driver. After connecting the ESP32, start the Device Manager, expand the "Ports (COM & LPT)" list and look for a port with the ESP32 or CP210x name. If there is none, or Windows shows messages about unsupported hardware or a missing driver, please install <a href="https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads" target=_blank>this</a>. </li><li><b>MacOS</b> supports this chip since around 10.15.7 (Catalina). The port is named "cu.usbserial-XXXX" ('XXXX' being a random number). If no such port is created upon connection, install <a href="https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads" target=_blank>this</a> driver. The port is named "cu.SLAB_USBtoUART" after installing this driver. <i>Do not use this driver to upload a firmware on TCD Control Boards >= 1.4, it will fail. Use the Apple built-in driver instead.</i></ul></li>
 <li>For ESP32 boards with a <b>CH340 USB-to-UART</b> chip,<ul><li><b>Windows</b> users may need to install a <a href="http://www.wch-ic.com/downloads/CH341SER_ZIP.html" target=_blank>driver</a>; see above on how to find out about the port.</li><li>On <b>Mac</b>, the port is named cu.usbserial-XXXX, no additional driver is required for MacOS Mojave and later.</li></ul></li>
-</ul>	
+</ul>
 
 <p>Let's get started:</p>
 <ol>
 <li style="margin-bottom:1em">Please select the firmware you want to install:
 	<ul style="list-style: none;">
-	<li><label><input type="radio" name="type" value="-tcd"> Time Circuits Display (A10001986 edition, V3.2.004 JAN172025)</label></li>
+	<li><label><input type="radio" name="type" value="-tcd" checked="checked"> Time Circuits Display (A10001986 edition, V3.2.004 JAN172025)</label></li>
 	<li><label><input type="radio" name="type" value="-fc"> Flux Capacitor (V1.71.1 FEB132025)</label></li>
 	<li><label><input type="radio" name="type" value="-sid"> SID (V1.52 FEB082025)</label></li>
 	<li><label><input type="radio" name="type" value="-dg"> Dash Gauges (V1.13.1 FEB132025)</label></li>
 	<li><label><input type="radio" name="type" value="-vsr"> VSR (V1.14.1 FEB112025)</label></li>
 	<li><label><input type="radio" name="type" value="-remote"> Futaba Remote Control (V1.05.1 FEB132025)</label></li>
-	<li><label><input type="radio" name="type" value="" checked="checked"> Generic - use this for <a href="https://github.com/CircuitSetup/Time-Circuits-Display/releases" target=_blank>CircuitSetup TCD releases</a></label></li>
+	<li><label><input type="radio" name="type" value=""> Generic - use this for <a href="https://github.com/CircuitSetup/Time-Circuits-Display/releases" target=_blank>CircuitSetup TCD releases</a></label></li>
 	</ul>
 </li>
 <li>Now connect your ESP32 board to your computer through USB and wait a few seconds. At this point, Windows users need to find out about the port to choose, see above. Then click <i>Connect</i>, select a port, and click <i>Install [prop type]</i>.<br>
-<div style="margin-left:auto;margin-right:auto;padding:10px;">		
-<esp-web-install-button manifest="https://reala10001986.github.io/DTMPropInstaller/manifest.json">
+<div style="margin-left:auto;margin-right:auto;padding:10px;">
+<esp-web-install-button manifest="https://reala10001986.github.io/DTMPropInstaller/m/manifest-tcd.json">
   <button slot="activate" class="button">Connect</button>
   <span slot="unsupported"><i>Your browser is not supported. Google Chrome or Microsoft Edge required.</i></span>
-  <span slot="not-allowed"><i>HTTPS required, HTTP not supported</i></span>	
+  <span slot="not-allowed"><i>HTTPS required, HTTP not supported</i></span>
 </esp-web-install-button>
 
 </li>
