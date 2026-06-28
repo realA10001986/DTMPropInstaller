@@ -37,13 +37,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,system-ui,'Segoe UI',Roboto,'H
 <li>NodeMCU ESP32 board (or TCD Control Board >= 1.4)</li>
 <li>USB cable</li>
 <li>Computer with Windows 10 or later, or MacOS >= 10.15.7</li>
-<li>Google Chrome or Microsoft Edge browser</li>
+<li>Firefox >= 151, Google Chrome or Microsoft Edge browser</li>
 <li>Driver for the USB bridge on your ESP32 board, see below</li>
 </ul>
 
 <p>Driver for USB connection</p>
 <ul>
-<li>For ESP32 boards with a <b>CP210x USB-to-UART</b> chip (CircuitSetup boards all have those):<ul><li><b>Windows</b> is said to come with a suitable driver. After connecting the ESP32, start the Device Manager, expand the "Ports (COM & LPT)" list and look for a port with the ESP32 or CP210x name. If there is none, or Windows shows messages about unsupported hardware or a missing driver, please install <a href="https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads" target=_blank>this</a>. </li><li><b>MacOS</b> supports this chip since around 10.15.7 (Catalina). The port is named "cu.usbserial-XXXX" ('XXXX' being a random number). If no such port is created upon connection, install <a href="https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads" target=_blank>this</a> driver. The port is named "cu.SLAB_USBtoUART" after installing this driver. <i>Do not use this driver to upload a firmware on TCD Control Boards >= 1.4, it will fail. Use the Apple built-in driver instead.</i></ul></li>
+<li>For ESP32 boards with a <b>CP210x USB-to-UART</b> chip (CircuitSetup boards all have those):<ul><li><b>Windows</b> is said to come with a suitable driver. After connecting the ESP32, start the Device Manager, expand the "Ports (COM & LPT)" list and look for a port with the ESP32 or CP210x name. If there is none, or Windows shows messages about unsupported hardware or a missing driver, please install <a href="https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads" target=_blank>this</a>. </li><li><b>MacOS</b> supports this chip since around 10.15.7 (Catalina). The port is named "CP210x USB to UART Bridge Controller" or "cu.usbserial-XXXX" ('XXXX' being a random number). If no such port is created upon connection, install <a href="https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads" target=_blank>this</a> driver. The port is named "cu.SLAB_USBtoUART" after installing this driver. <i>Do not use this driver to upload a firmware on TCD Control Boards >= 1.4, it will fail. Use the Apple built-in driver instead.</i></ul></li>
 <li>For ESP32 boards with a <b>CH340 USB-to-UART</b> chip,<ul><li><b>Windows</b> users may need to install a <a href="http://www.wch-ic.com/downloads/CH341SER_ZIP.html" target=_blank>driver</a>; see above on how to find out about the port.</li><li>On <b>Mac</b>, the port is named cu.usbserial-XXXX, no additional driver is required for MacOS Mojave and later.</li></ul></li>
 </ul>
 
@@ -57,6 +57,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,system-ui,'Segoe UI',Roboto,'H
 	<li><label><input type="radio" name="type" value="-dg"> Dash Gauges (V1.31 MAR252026)</label></li>
 	<li><label><input type="radio" name="type" value="-vsr"> VSR (V1.31 MAR252026)</label></li>
 	<li><label><input type="radio" name="type" value="-remote"> Futaba Remote Control (V1.21 MAR262026)</label></li>
+	<!--<li><label><input type="radio" name="type" value="-jb"> Lou's Cafe Jukebox (V1.0 JULxx2026)</label></li>-->
 	<li><label><input type="radio" name="type" value=""> Generic - use this for <a href="https://github.com/CircuitSetup/Time-Circuits-Display/releases" target=_blank>CircuitSetup TCD releases</a></label></li>
 	</ul>
 </li>
@@ -64,7 +65,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,system-ui,'Segoe UI',Roboto,'H
 <div style="margin-left:auto;margin-right:auto;padding:10px;">
 <esp-web-install-button manifest="https://reala10001986.github.io/DTMPropInstaller/m/manifest-tcd.json">
   <button slot="activate" class="button">Connect</button>
-  <span slot="unsupported"><i>Your browser is not supported. Google Chrome or Microsoft Edge required.</i></span>
+  <span slot="unsupported"><i>Your browser is not supported. Firefox 151 or later, Google Chrome or Microsoft Edge required.</i></span>
   <span slot="not-allowed"><i>HTTPS required, HTTP not supported</i></span>
 </esp-web-install-button>
 
