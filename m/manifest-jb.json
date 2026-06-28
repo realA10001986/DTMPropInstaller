@@ -1,0 +1,13 @@
+{
+  "name": "Jukebox",
+  "version": "1.0",
+  "new_install_prompt_erase": false,
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        { "path": "https://reala10001986.github.io/DTMPropInstaller/bin/jb.bin", "offset": 0 }
+      ]
+    }
+  ]
+}
