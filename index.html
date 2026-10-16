@@ -34,7 +34,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,system-ui,'Segoe UI',Roboto,'H
 
 <p>Requirements:</p>
 <ul>
-<li>NodeMCU ESP32 board (or TCD Control Board >= 1.4)</li>
+<li>Fully assembled CircuitSetup/A10001986 prop control board</li>
+<li>SD card in control board slot (maximum size 32GB, FAT32 formatted, empty)</li>
 <li>USB cable</li>
 <li>Computer with Windows 10 or later, or MacOS >= 10.15.7</li>
 <li>Firefox >= 151, Google Chrome or Microsoft Edge browser</li>
@@ -49,39 +50,38 @@ body{font-family:-apple-system,BlinkMacSystemFont,system-ui,'Segoe UI',Roboto,'H
 
 <p>Let's get started:</p>
 <ol>
-<li style="margin-bottom:1em">Please select the firmware you want to install:
-	<ul style="list-style: none;">
-	<li><label><input type="radio" name="type" value="-tcd" checked="checked"> Time Circuits Display (A10001986 Standard edition, V3.21 MAR262026)</label></li>
-	<li><label><input type="radio" name="type" value="-fc"> Flux Capacitor (V1.101 MAR252026)</label></li>
-	<li><label><input type="radio" name="type" value="-sid"> SID (V1.71 MAR252026)</label></li>
-	<li><label><input type="radio" name="type" value="-dg"> Dash Gauges (V1.31 MAR252026)</label></li>
-	<li><label><input type="radio" name="type" value="-vsr"> VSR (V1.31 MAR252026)</label></li>
-	<li><label><input type="radio" name="type" value="-remote"> Futaba Remote Control (V1.21 MAR262026)</label></li>
-	<li><label><input type="radio" name="type" value="-jb"> Lou's Cafe Jukebox (V1.0 JUN292026)</label></li>
-	<li><label><input type="radio" name="type" value=""> Generic - use this for <a href="https://github.com/CircuitSetup/Time-Circuits-Display/releases" target=_blank>CircuitSetup TCD releases</a></label></li>
-	</ul>
+<li>
+Download the latest firmware and sound-pack for the prop from those sources:
+<ul>
+<li><a href="https://github.com/realA10001986/Time-Circuits-Display/releases/latest">Time Circuits</a></li>
+<li><a href="https://github.com/realA10001986/Flux-Capacitor/releases/latest">Flux Capacitor</a></li>
+<li><a href="https://github.com/realA10001986/SID/releases/latest">SID</a></li>
+<li><a href="https://github.com/realA10001986/Dash-Gauges/releases/latest">Dash Gauges</a></li>
+<li><a href="https://github.com/realA10001986/VSR/releases/latest">VSR</a></li>
+<li><a href="https://github.com/realA10001986/Remote/releases/latest">Futaba Remote Control</a></li>
+<li><a href="https://github.com/realA10001986/Lou-s-Cafe-Jukebox/releases/latest">Jukebox</a></li>
 </li>
-<li>Now connect your ESP32 board to your computer through USB and wait a few seconds. At this point, Windows users need to find out about the port to choose, see above. Then click <i>Connect</i>, select a port, and click <i>Install [prop type]</i>.<br>
+Unzip the sound-pack if it is a zip file. In the end, except for the SID, there must be two .bin files,
+one for the main firmware, one for the sound-pack.
+</li>
+<li>Connect your prop's control board to your computer through USB and wait a few seconds. At this point, Windows users need to find out about the port to choose, see above. Then click <i>Connect</i>, select a port, and click <i>Install [prop type]</i>.<br>
 <div style="margin-left:auto;margin-right:auto;padding:10px;">
-<esp-web-install-button manifest="https://reala10001986.github.io/DTMPropInstaller/m/manifest-tcd.json">
+<esp-web-install-button manifest="https://reala10001986.github.io/DTMPropInstaller/m/manifest.json">
   <button slot="activate" class="button">Connect</button>
   <span slot="unsupported"><i>Your browser is not supported. Firefox 151 or later, Google Chrome or Microsoft Edge required.</i></span>
   <span slot="not-allowed"><i>HTTPS required, HTTP not supported</i></span>
 </esp-web-install-button>
 
 </li>
-<li>After the upload has finished, disconnect the ESP32 board from your computer and put it in/on your prop (if you haven't done that already). The next steps are to check for firmware updates on the prop's page (as the version presented here might be outdated), and afterwards to install the sound pack. Please see the prop's documentation, chapter "Installation", for details.<br><br>If you chose <i>Generic</i>, please power-up the prop and connect your computer or hand-held to the WiFi network named "NP-AP". Navigate your browser to <a href="http://install.local">http://install.local</a> or <a href="http://192.168.4.1">http://192.168.4.1</a> and click on <i>Update</i>. On the page presented then, select the firmware binary to be installed (eg. a firmware binary from a <a href="https://github.com/CircuitSetup/Time-Circuits-Display/releases" target=_blank>CircuitSetup Time Circuits release</a>), and click <i>UPDATE</i> to proceed. The selected firmware will be installed on your ESP32.
+<li>
+After the upload has finished, connect your computer or hand-held to the WiFi network named "NP-AP". Navigate your
+browser to <a href="http://install.local">http://install.local</a> or <a href="http://192.168.4.1">http://192.168.4.1</a>
+and click on <i>Update</i>.
 </li>
+<li>Now select the main firmware file downloaded from the prop's website and click "Update".</li>
+<li>After upload has finished, enter the config portal again and install the sound-pack: Select the xxA.bin file
+in the bottom file selector and click "Upload".</li>
 </ol>
-
-<script>
-      document.querySelectorAll('input[name="type"]').forEach(radio =>
-        radio.addEventListener("change", () => {
-          const button = document.querySelector('esp-web-install-button');
-          button.setAttribute("manifest", `https://reala10001986.github.io/DTMPropInstaller/m/manifest${radio.value}.json`);
-        }
-      ));
-</script>
 
 </div>
 
