@@ -34,8 +34,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,system-ui,'Segoe UI',Roboto,'H
 
 <p>Requirements:</p>
 <ul>
-<li>Fully assembled CircuitSetup/A10001986 prop control board</li>
-<li>SD card in control board slot (maximum size 32GB, FAT32 formatted, empty)</li>
+<li>Fully assembled CircuitSetup/A10001986 prop control board.</li>
+<li>SD card in prop's control board slot (maximum size 32GB, FAT32 formatted, empty)</li>
 <li>USB cable</li>
 <li>Computer with Windows 10 or later, or MacOS >= 10.15.7</li>
 <li>Firefox >= 151, Google Chrome or Microsoft Edge browser</li>
@@ -53,17 +53,20 @@ body{font-family:-apple-system,BlinkMacSystemFont,system-ui,'Segoe UI',Roboto,'H
 <li>
 Download the latest firmware for the prop from those sources:
 <ul>
-<li><a href="https://github.com/realA10001986/Time-Circuits-Display/releases/latest">Time Circuits</a>: Main firmware plus sound-pack.</li>
-<li><a href="https://github.com/realA10001986/Flux-Capacitor/releases/latest">Flux Capacitor</a>: Main firmware plus sound-pack.</li>
+<li><a href="https://github.com/realA10001986/Time-Circuits-Display/releases/latest">Time Circuits</a>: Main firmware and sound-pack.</li>
+<li><a href="https://github.com/realA10001986/Flux-Capacitor/releases/latest">Flux Capacitor</a>: Main firmware and sound-pack.</li>
 <li><a href="https://github.com/realA10001986/SID/releases/latest">SID</a>: One file.</li>
-<li><a href="https://github.com/realA10001986/Dash-Gauges/releases/latest">Dash Gauges</a>: Main firmware plus sound-pack.</li>
-<li><a href="https://github.com/realA10001986/VSR/releases/latest">VSR</a>: Main firmware plus sound-pack.</li>
-<li><a href="https://github.com/realA10001986/Remote/releases/latest">Futaba Remote Control</a>: Main firmware plus sound-pack.</li>
-<li><a href="https://github.com/realA10001986/Lou-s-Cafe-Jukebox/releases/latest">Jukebox</a>: Main firmware plus sound-pack.</li>
+<li><a href="https://github.com/realA10001986/Dash-Gauges/releases/latest">Dash Gauges</a>: Main firmware and sound-pack.</li>
+<li><a href="https://github.com/realA10001986/VSR/releases/latest">VSR</a>: Main firmware and sound-pack.</li>
+<li><a href="https://github.com/realA10001986/Remote/releases/latest">Futaba Remote Control</a>: Main firmware and sound-pack.</li>
+<li><a href="https://github.com/realA10001986/Lou-s-Cafe-Jukebox/releases/latest">Jukebox</a>: Main firmware and sound-pack.</li>
 </ul>
 If a sound-pack is part of the Release and this file is a zip file, unzip it now. There is one file inside, named xxA.bin.
 </li>
-<li>Connect your prop's control board to your computer through USB and wait a few seconds. At this point, Windows users need to find out about the port to choose, see above. Then click <i>Connect</i>, select a port, and click <i>Install [prop type]</i>.<br>
+<li>VSR and Jukebox only: Make sure that the VSR's display and/or pushwheels are connected. In case of a Jukebox,
+make sure the rotary encoders are connected.</li>
+<li>Connect your prop to your computer through USB and wait a few seconds. At this point, Windows users need to find out
+about the port to choose, see above. Then click <i>Connect</i>, select a port, and click <i>Install Generic Installer</i>.<br>
 <div style="margin-left:auto;margin-right:auto;padding:10px;">
 <esp-web-install-button manifest="https://reala10001986.github.io/DTMPropInstaller/m/manifest.json">
   <button slot="activate" class="button">Connect</button>
@@ -79,10 +82,10 @@ and click on <i>Update</i>.
 </li>
 <li>Now select the firmware file downloaded from the prop's website in step 1 and click "Update". In case of
 two-part-firmwares, select the main firmware file here, not the sound-pack file.</li>
-<li>For single-file firmwares: After upload has finished, the prop will finish the installation automatically.
+<li>For single-file firmwares: After the upload has finished, the prop will finish the installation automatically.
 You are all done at this point.
 <br>
-For two-part firmwares: After upload has finished, connect your computer/handheld to the prop's WiFi network ("TCD-AP" for
+For two-part firmwares: After the upload has finished, connect your computer/handheld to the prop's WiFi network ("TCD-AP" for
 the TCD, "FC-AP" for the flux capacitor, etc), navigate to the props's <a href="http://192.168.4.1">config portal</a>,
 click on "Update & Upload", select the sound-pack file in the bottom file selector, and click "Upload". After rebooting,
 the prop will finish installation, after which it is ready for use.</li>
